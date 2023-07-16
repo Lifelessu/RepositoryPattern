@@ -28,7 +28,7 @@ namespace RepositoryPattern_Relationship_.Repository
         {
             //var getId = await _context.Sellers.FirstOrDefaultAsync(m => m.SellerId == sellerId);
             //return getId;
-            //hakdog
+            //hakdogg
             return await _context.Sellers.SingleOrDefaultAsync(m => m.SellerId ==  id); 
             
         }
