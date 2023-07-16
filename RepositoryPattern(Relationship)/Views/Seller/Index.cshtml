@@ -1,0 +1,38 @@
+﻿@model ViewModel
+
+<form method="post">
+
+    <a class = "btn btn-outline-primary" asp-controller="Seller" asp-action="AddItem">Add New Item</a>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Description</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var seller in Model.Sellers)
+            {
+                var item = Model.Items.FirstOrDefault(q => q.SellerId == seller.SellerId);
+                <tr>
+                    <td>@seller.SellerId</td>
+                    <td>@item.ItemName</td>
+                    <td>@item.Description</td>
+                    <td>@seller.FirstName</td>
+                    <td>@seller.LastName</td>
+                    <td>
+                        <a class="btn btn-outline-success" asp-controller="Seller" asp-action="EditItem" asp-route-id="@seller.SellerId">Edit</a>
+                        <a class="btn btn-outline-danger" asp-controller="Seller" asp-action="DeleteItem" asp-route-id="@seller.SellerId">Delete</a>
+                    </td>
+                </tr>
+            }
+           
+            
+        </tbody>
+
+    </table>
+</form>

@@ -1,0 +1,19 @@
+﻿@model ModifyItem
+
+<form method="post" asp-action="DeleteItem">
+
+    <label>Item Name</label>
+    <input type="text" placeholder="Enter Item name" asp-for="ItemName" />
+
+    <label>Description</label>
+    <input type="text" placeholder="Enter Description" asp-for="Description" />
+
+    <label>Seller First Name</label>
+    <input type="text" placeholder="Enter First Name" asp-for="FirstName" />
+
+    <label>Seller Last Name</label>
+    <input type="text" placeholder="Enter Last Name" asp-for="LastName" />
+
+    <button class="btn btn-primary">Submit</button>
+
+</form>

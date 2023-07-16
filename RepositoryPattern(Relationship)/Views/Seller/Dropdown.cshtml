@@ -1,0 +1,14 @@
+﻿@model RepositoryPattern_Relationship_.Models.ViewModel
+
+   @* var candidates = ((List<Item>)ViewBag.SellerItems).Where(e => e.ItemId == ViewBag.[i].CandidatePositionId);*@
+    <div class="form-group mb-4">
+        @*<h6 class="mt-2">@ViewBag.CandidatePositions[i].CandidatePositionName</h6>*@
+        <select name="itemId[i]" class="form-control">
+            <option value="">-- Select Payment --</option>
+            <option value="0" class="text-danger">Abstain</option>
+            @foreach (var obj in Model.Items)
+            {
+                <option value="@obj.ItemId">@obj.ItemName</option>
+            }
+        </select>
+    </div>
