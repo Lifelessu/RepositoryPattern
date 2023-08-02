@@ -34,6 +34,13 @@ namespace RepositoryPattern_Relationship_.Repository
            return await _context.Items.ToListAsync();
         }
 
+        public async Task<IEnumerable<Item>> SearchItems(string itemName)
+        {
+            var result = await _context.Items.Where(a => a.ItemName.Contains(itemName)).ToListAsync();
+            return result;
+
+        }
+
         public async Task UpdateItem(Item obj)
         {
             _context.Entry(obj).State = EntityState.Modified;

@@ -1,10 +1,20 @@
 ﻿@model ViewModel
 
-<form method="post">
+<form method="post" asp-action="ViewItem" enctype="multipart/form-data">
 
+    <input type="search" placeholder="Search" name="firstName"/>
+    <label for="itemName">Item Name:</label>
+    <input type="search" placeholder="Search by Item Name" name="itemName" />
+    <button type="submit">Search</button>
+
+</form>
     <a class = "btn btn-outline-primary" asp-controller="Seller" asp-action="AddItem">Add New Item</a>
-    
-    <table class="table table-striped">
+    <button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#viewItem" data-url="@Url.Action("Create")">Add</button>
+    <div id="PlaceHolderHere"></div>
+
+<div id="openEditModalContainer"></div>
+
+<table id="tblist" class="table table-striped">
         <thead>
             <tr>
                 <th>Item Name</th>
@@ -19,20 +29,56 @@
             {
                 var item = Model.Items.FirstOrDefault(q => q.SellerId == seller.SellerId);
                 <tr>
-                    <td>@seller.SellerId</td>
-                    <td>@item.ItemName</td>
-                    <td>@item.Description</td>
-                    <td>@seller.FirstName</td>
-                    <td>@seller.LastName</td>
+                    
+                    <td>@item?.ItemName</td>
+                    <td>@item?.Description</td>
+                    <td>@seller?.FirstName</td>
+                    <td>@seller?.LastName</td>
                     <td>
                         <a class="btn btn-outline-success" asp-controller="Seller" asp-action="EditItem" asp-route-id="@seller.SellerId">Edit</a>
                         <a class="btn btn-outline-danger" asp-controller="Seller" asp-action="DeleteItem" asp-route-id="@seller.SellerId">Delete</a>
+                    <button type="button" class="btn btn-danger openEditModal" data-toggle="modal" data-target="#editModalSeller" data-url="@Url.Action("ViewSeller", "Seller", new {id = seller.SellerId})">View</button>
                     </td>
                 </tr>
             }
            
-            
         </tbody>
 
     </table>
-</form>
+
+@section scripts
+{
+  <script>
+        $(document).ready(function () {
+            $('#tbllist').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+
+        $(document).ready(function (){
+            $('#tbllist').DataTable({
+
+            });
+
+        });
+        //(function ($) {
+        //    var openEditElement = $('#openEditModalContainer');
+        //    $('.openEditModal').click(function (event) {
+        //        var url = $(this).data('url');
+        //        var getUrl = decodeURIComponent(url);
+
+        //        openEditElement.empty();
+
+        //        $.get(getUrl).done(function (data) {
+        //            openEditElement.html(data);
+        //            openEditElement.find('#editModalSeller').modal('show');
+        //        });
+        //    });
+        //})(jQuery);
+
+  </script>
+}
+

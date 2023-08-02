@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RepositoryPattern_Relationship_.Data;
@@ -19,19 +20,28 @@ namespace RepositoryPattern_Relationship_.Controllers
             _seller = seller;
             _context = context;
         }
-        public async Task <IActionResult> Index()
+
+        [Authorize]
+        public async Task<IActionResult> Index(string firstName, string itemName)
         {
-            var item = await _item.GetItems();
-            var seller = await _seller.GetSellers();
+            var sellers = await _seller.GetSellers();
+            var items = await _item.GetItems();
+
+            if(firstName != null || itemName != null)
+            {
+                sellers = await _seller.Searchseller(firstName, itemName);
+            }
 
             var viewModel = new ViewModel
-            {   
-                Items = item.ToList(),
-                Sellers = seller.ToList()
+            {
+                Items = items.ToList(),
+                Sellers = sellers.ToList()
             };
 
             return View(viewModel);
         }
+
+        
 
         [HttpGet]
         public async Task <IActionResult>Dropdown()
@@ -179,6 +189,13 @@ namespace RepositoryPattern_Relationship_.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task <IActionResult> ViewSeller(int id)
+        {
+            var seller = await _seller.GetSellerId(id);
+            return PartialView("_SellerModalPartial", seller);
         }
         
     }

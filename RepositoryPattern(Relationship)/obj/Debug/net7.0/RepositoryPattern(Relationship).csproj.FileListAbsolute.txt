@@ -9,6 +9,9 @@ C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPatte
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Azure.Identity.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Humanizer.dll
+C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
@@ -17,6 +20,9 @@ C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPatte
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.Identity.Client.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\lares User\source\repos\RepositoryPattern(Relationship)\RepositoryPattern(Relationship)\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll

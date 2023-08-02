@@ -1,4 +1,28 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+//var openEditElement = $('#openEditModalContainer');
+//$('.openEditModal').click(function (event) {
+//    var url = $(this).data('url');
+//    var getUrl = decodeURIComponent(url);
 
-// Write your JavaScript code.
+//    openEditElement.empty();
+
+//    $.get(getUrl).done(function (data) {
+//        openEditElement.html(data);
+//        openEditElement.find('#editModalSeller').modal('show');
+//    });
+//});
+
+(function ($) {
+    var openEditElement = $('#openEditModalContainer');
+    $('.openEditModal').click(function (event) {
+        var url = $(this).data('url');
+        var getUrl = decodeURIComponent(url);
+
+        openEditElement.empty();
+
+        $.get(getUrl).done(function (data) {
+            openEditElement.html(data);
+            openEditElement.find('#editModalSeller').modal('show');
+        });
+    });
+})(jQuery);
